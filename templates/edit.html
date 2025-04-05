@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+    <title>Edit Job</title>
+  </head>
+  <body>
+    <h2>Edit Job Application</h2>
+
+    <form method="POST">
+      {{ form.hidden_tag() }}
+      <p>{{ form.company.label }} {{ form.company() }}</p>
+      <p>{{ form.role.label }} {{ form.role() }}</p>
+      <p>{{ form.status.label }} {{ form.status() }}</p>
+      <p>{{ form.submit() }}</p>
+    </form>
+
+    <div class="bth">
+      <a class="bth-btn" href="{{ url_for('index') }}">Back to Home</a>
+    </div>
+  </body>
+</html>
